@@ -18,6 +18,11 @@ editor["numToStr/Comment.nvim"] = {
 	config = require("editor.comment"),
 }
 
+editor["m4xshen/autoclose.nvim"] = {
+	lazy = true,
+	event = "InsertEnter",
+	config = require("editor.autoclose"),
+}
 ----------------------------------------------------------------------
 --                  :treesitter related plugins                    --
 ----------------------------------------------------------------------
