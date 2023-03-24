@@ -3,12 +3,12 @@ local ui = {}
 ui["catppuccin/nvim"] = {
 	lazy = false,
 	name = "catppuccin",
-	config = require("ui.catppuccin"),
+	config = require("ui.themes.catppuccin"),
 }
 
 ui["shaunsingh/nord.nvim"] = {
 	lazy = true,
-	config = require("ui.nord"),
+	config = require("ui.themes.nord"),
 }
 
 ui["akinsho/bufferline.nvim"] = {
