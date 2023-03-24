@@ -28,10 +28,16 @@ ui["lewis6991/gitsigns.nvim"] = {
 	event = { "CursorHold", "CursorHoldI" },
 	config = require("ui.gitsigns"),
 }
+
 ui["lukas-reineke/indent-blankline.nvim"] = {
 	lazy = true,
 	event = "BufReadPost",
 	config = require("ui.indent-blankline"),
 }
 
+ui["rcarriga/nvim-notify"] = {
+	lazy = true,
+	event = "VeryLazy",
+	config = require("ui.notify"),
+}
 return ui
