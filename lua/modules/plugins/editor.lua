@@ -6,6 +6,12 @@ editor["rainbowhxch/accelerated-jk.nvim"] = {
 	config = require("editor.accelerated-jk"),
 }
 
+editor["ggandor/leap.nvim"] = {
+	lazy = true,
+	event = "VeryLazy",
+	config = require("editor.leap"),
+}
+
 editor["numToStr/Comment.nvim"] = {
 	lazy = true,
 	event = { "CursorHold", "CursorHoldI" },
@@ -30,10 +36,6 @@ editor["nvim-treesitter/nvim-treesitter"] = {
 		{ "JoosepAlviste/nvim-ts-context-commentstring" },
 		{ "mfussenegger/nvim-treehopper" },
 		{ "andymass/vim-matchup" },
-		{
-			"windwp/nvim-ts-autotag",
-			config = require("editor.autotag"),
-		},
 		{
 			"NvChad/nvim-colorizer.lua",
 			config = require("editor.colorizer"),
