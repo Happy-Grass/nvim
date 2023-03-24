@@ -1,8 +1,4 @@
-local status, lualine = pcall(require, "lualine")
-if not status then
-	vim.notify("Lualine not found!")
-	return
-end
+return function()
 local config = {
 	options = {
 		theme = "auto",
@@ -122,4 +118,5 @@ ins_right({
 	timer = { progress_enddelay = 500, spinner = 1000, lsp_client_name_enddelay = 1000 },
 	spinner_symbols = { "🌑 ", "🌒 ", "🌓 ", "🌔 ", "🌕 ", "🌖 ", "🌗 ", "🌘 " },
 })
-lualine.setup(config)
+require("lualine").setup(config)
+end
