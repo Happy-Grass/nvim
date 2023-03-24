@@ -119,15 +119,15 @@ local load_core = function()
     clipboard_config()
 
     require("core.options")
-    require("core.mapping")
+    require("core.coremap")
     require("keymap")
     require("core.event")
     require("core.pack")
 
-    local colorscheme = require("core.settings").colorscheme
-    local background = require("core.settings").background
-    vim.api.nvim_command("set background=" .. background)
-    vim.api.nvim_command("colorscheme " .. colorscheme)
+    -- local colorscheme = require("core.settings").colorscheme
+    -- local background = require("core.settings").background
+    -- vim.api.nvim_command("set background=" .. background)
+    -- vim.api.nvim_command("colorscheme " .. colorscheme)
 end
 
 load_core()
