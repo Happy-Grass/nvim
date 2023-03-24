@@ -1,9 +1,20 @@
 local ui = {}
 
+ui["catppuccin/nvim"] = {
+	lazy = false,
+	name = "catppuccin",
+	config = require("ui.catppuccin"),
+}
+
+ui["shaunsingh/nord.nvim"] = {
+	lazy = true,
+	config = require("ui.nord"),
+}
+
 ui["akinsho/bufferline.nvim"] = {
 	lazy = true,
 	event = { "BufReadPost", "BufAdd", "BufNewFile" },
-	config = require("ui.bufferline"),
+	config = require("ui.themes.bufferline"),
 }
 
 ui["nvim-lualine/lualine.nvim"] = {
