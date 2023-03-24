@@ -14,7 +14,7 @@ ui["shaunsingh/nord.nvim"] = {
 ui["akinsho/bufferline.nvim"] = {
 	lazy = true,
 	event = { "BufReadPost", "BufAdd", "BufNewFile" },
-	config = require("ui.themes.bufferline"),
+	config = require("ui.bufferline"),
 }
 
 ui["nvim-lualine/lualine.nvim"] = {
