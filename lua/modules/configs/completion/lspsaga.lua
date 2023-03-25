@@ -23,12 +23,18 @@ return function()
 		end
 	end
 
+    vim.diagnostic.config({
+        virtual_text = false,
+        signs = true,
+        update_in_insert = false,
+    })
+
 	set_sidebar_icons()
 
 	require("lspsaga").setup({
 		preview = {
-			lines_above = 1,
-			lines_below = 17,
+			lines_above = 0,
+			lines_below = 10,
 		},
 		scroll_preview = {
 			scroll_down = "<C-j>",
@@ -36,8 +42,9 @@ return function()
 		},
 		request_timeout = 3000,
 		finder = {
+            max_height = 0.5,
 			keys = {
-				jump_to = "e",
+				jump_to = "p",
 				edit = { "o", "<CR>" },
 				vsplit = "s",
 				split = "i",
@@ -55,8 +62,10 @@ return function()
 		},
 		code_action = {
 			num_shortcut = true,
+            show_server_name = false,
+            extend_gitsigns = true,
 			keys = {
-				quit = "q",
+				quit = {"q", "<esc>"},
 				exec = "<CR>",
 			},
 		},
@@ -68,21 +77,22 @@ return function()
 			virtual_text = false,
 		},
 		diagnostic = {
+			show_code_action = true,
+			show_source = true,
 			on_insert = true,
 			on_insert_follow = false,
-			show_code_action = true,
 			show_virt_line = true,
-			show_source = true,
 			border_follow = true,
 			jump_num_shortcut = true,
+            max_width = 0.7,
 			keys = {
 				exec_action = "<CR>",
-				quit = "q",
+				quit = {"q", "<esc>"},
 				go_action = "g",
 			},
 		},
 		rename = {
-			quit = "<C-c>",
+			quit = "<esc>",
 			mark = "x",
 			confirm = "<CR>",
 			exec = "<CR>",
@@ -92,13 +102,14 @@ return function()
 			win_position = "right",
 			win_with = "_sagaoutline",
 			win_width = 30,
+            show_detail = true,
 			auto_preview = false,
 			auto_refresh = true,
 			auto_close = true,
 			keys = {
 				jump = "<CR>",
 				expand_collapse = "u",
-				quit = "q",
+				quit = {"q", "<esc>"},
 			},
 		},
 		symbol_in_winbar = {
@@ -106,6 +117,8 @@ return function()
 			separator = " " .. icons.ui.Separator,
 			hide_keyword = true,
 			show_file = false,
+            folder_level = 2,
+            respect_root = false,
 			color_mode = true,
 		},
 		beacon = {
@@ -113,7 +126,7 @@ return function()
 			frequency = 12,
 		},
 		ui = {
-			border = "single", -- Can be single, double, rounded, solid, shadow.
+			border = "double", -- Can be single, double, rounded, solid, shadow.
 			winblend = 0,
 			expand = icons.ui.ArrowClosed,
 			collapse = icons.ui.ArrowOpen,
