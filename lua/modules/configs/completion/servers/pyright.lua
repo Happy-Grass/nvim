@@ -1,3 +1,4 @@
+local util = require("lspconfig.util")
 return {
 	cmd = { "pyright-langserver", "--stdio" },
 	filetypes = { "python" },
