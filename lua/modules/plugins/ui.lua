@@ -7,8 +7,18 @@ ui["catppuccin/nvim"] = {
 }
 
 ui["shaunsingh/nord.nvim"] = {
-	lazy = true,
+	lazy = false,
 	config = require("ui.themes.nord"),
+}
+
+ui["folke/tokynight.nvim"] = {
+	lazy = false,
+	config = require("ui.themes.tokynight"),
+}
+
+ui["olimorris/onedarkpro.nvim"] = {
+	lazy = false,
+	config = require("ui.themes.onedarkpro"),
 }
 
 ui["akinsho/bufferline.nvim"] = {
