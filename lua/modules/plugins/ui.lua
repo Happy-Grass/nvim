@@ -11,9 +11,9 @@ ui["shaunsingh/nord.nvim"] = {
 	config = require("ui.themes.nord"),
 }
 
-ui["folke/tokynight.nvim"] = {
+ui["folke/tokyonight.nvim"] = {
 	lazy = false,
-	config = require("ui.themes.tokynight"),
+	config = require("ui.themes.tokyonight"),
 }
 
 ui["olimorris/onedarkpro.nvim"] = {
