@@ -124,10 +124,10 @@ local load_core = function()
     require("core.event")
     require("core.pack")
 
-    -- local colorscheme = require("core.settings").colorscheme
-    -- local background = require("core.settings").background
-    -- vim.api.nvim_command("set background=" .. background)
-    -- vim.api.nvim_command("colorscheme " .. colorscheme)
+    local colorscheme = require("core.settings").colorscheme
+    local background = require("core.settings").background
+    vim.api.nvim_command("set background=" .. background)
+    vim.api.nvim_command("colorscheme " .. colorscheme)
 end
 
 load_core()
