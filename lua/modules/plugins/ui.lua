@@ -35,6 +35,14 @@ ui["lukas-reineke/indent-blankline.nvim"] = {
 	config = require("ui.indent-blankline"),
 }
 
+ui["folke/noice.nvim"] = {
+	lazy = true,
+	dependencies = {
+		{ "MunifTanjim/nui.nvim" },
+		{ "rcarriga/nvim-notify" },
+	},
+}
+
 ui["rcarriga/nvim-notify"] = {
 	lazy = true,
 	event = "VeryLazy",
