@@ -41,6 +41,7 @@ ui["folke/noice.nvim"] = {
 		{ "MunifTanjim/nui.nvim" },
 		{ "rcarriga/nvim-notify" },
 	},
+    config = require("ui.noice")
 }
 
 ui["rcarriga/nvim-notify"] = {
