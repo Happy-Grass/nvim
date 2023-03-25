@@ -72,18 +72,15 @@ return function()
 			},
 		},
 		formatting = {
-			fields = { "kind", "abbr", "menu" },
-			format = function(entry, vim_item)
-				local kind = lspkind.cmp_format({
-					mode = "symbol_text",
-					maxwidth = 50,
-					symbol_map = vim.tbl_deep_extend("force", icons.kind, icons.type, icons.cmp),
-				})(entry, vim_item)
-				local strings = vim.split(kind.kind, "%s", { trimempty = true })
-				kind.kind = " " .. strings[1] .. " "
-				kind.menu = "    (" .. strings[2] .. ")"
-				return kind
-			end,
+			format = lspkind.cmp_format({
+				mode = "symbol_text",
+				maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+				maxheight = 20,
+				before = function(entry, vim_item)
+					vim_item.menu = "[" .. string.upper(entry.source.name) .. "]"
+					return vim_item
+				end,
+			}),
 		},
 		-- You can set mappings if you want
 		mapping = cmp.mapping.preset.insert({
@@ -119,19 +116,33 @@ return function()
 		},
 		-- You should specify your *installed* sources.
 		sources = {
-			{ name = "nvim_lsp" },
+			{ name = "nvim_lsp", max_item_count=5 },
 			-- { name = "nvim_lua" },
-			{ name = "luasnip" },
-			{ name = "path" },
-			{ name = "treesitter" },
+			{ name = "luasnip", max_item_count=5 },
+			{ name = "path", max_item_count=5 },
+			{ name = "treesitter", max_item_count=5 },
 			-- { name = "spell" },
 			-- { name = "tmux" },
 			-- { name = "orgmode" },
-			{ name = "buffer" },
-			{ name = "latex_symbols" },
+			{ name = "buffer", max_item_count=5 },
+			{ name = "latex_symbols", max_item_count=5 },
 			-- { name = "copilot" },
 			-- { name = "codeium" },
 			-- { name = "cmp_tabnine" },
 		},
+	})
+	cmp.setup.cmdline("/", {
+		sources = {
+			{ name = "buffer", max_item_count = 5 },
+		},
+	})
+
+	-- Use cmdline & path source for ':'.
+	cmp.setup.cmdline(":", {
+		sources = cmp.config.sources({
+			{ name = "path", max_item_count = 5 },
+		}, {
+			{ name = "cmdline", max_item_count = 5 },
+		}),
 	})
 end
