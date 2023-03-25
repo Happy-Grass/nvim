@@ -2,7 +2,7 @@ return function()
     local ls = require("luasnip")
     local opt = { noremap = true, silent = true }
     local map = vim.keymap.set
-    -- 后来改到每个类型文件里加载
+
     require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets/" })
     ls.config.set_config({
         history = true,
