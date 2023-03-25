@@ -59,10 +59,12 @@ settings["server_formatting_block_list"] = {
 settings["lsp_deps"] = {
 	"bashls",
 	"clangd",
-	"html",
+	"texlab",
 	"jsonls",
+	"yamlls",
 	"lua_ls",
 	"pyright",
+	"r_language_server",
 	-- "gopls",
 }
 
@@ -74,12 +76,16 @@ settings["lsp_deps"] = {
 settings["null_ls_deps"] = {
 	"black",
 	"clang_format",
-	"editorconfig_checker",
+	"cpplint",
+	"flake8",
 	"prettier",
-	"rustfmt",
-	"shfmt",
 	"stylua",
-	"vint",
+	"luacheck",
+	"shellcheck",
+	"vale",
+	"beaufysh",
+	"yapf",
+	"latexindent",
 }
 
 return settings
