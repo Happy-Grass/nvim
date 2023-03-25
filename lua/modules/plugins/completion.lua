@@ -5,7 +5,7 @@ completion["neovim/nvim-lspconfig"] = {
 	event = { "BufReadPost", "BufAdd", "BufNewFile" },
 	config = require("completion.lsp"),
 	dependencies = {
-		-- { "ray-x/lsp_signature.nvim" },
+		{ "ray-x/lsp_signature.nvim" },
 		{ "williamboman/mason.nvim" },
 		{ "williamboman/mason-lspconfig.nvim" },
 		{
@@ -37,11 +37,13 @@ completion["hrsh7th/nvim-cmp"] = {
 		-- { "lukas-reineke/cmp-under-comparator" },
 		{ "saadparwaiz1/cmp_luasnip" },
 		{ "hrsh7th/cmp-nvim-lsp" },
+        -- {"hrsh7th/cmp-nvim-lsp-signature-help"},
 		-- { "hrsh7th/cmp-nvim-lua" },
 		-- { "andersevenrud/cmp-tmux" },
 		{ "hrsh7th/cmp-path" },
 		-- { "f3fora/cmp-spell" },
 		{ "hrsh7th/cmp-buffer" },
+        {"hrsh7th/cmp-cmdline"},
 		{ "kdheepak/cmp-latex-symbols" },
 		{ "ray-x/cmp-treesitter" },
 		-- { "tzachar/cmp-tabnine", build = "./install.sh", config = require("completion.tabnine") },
