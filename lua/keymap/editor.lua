@@ -19,8 +19,6 @@ local plug_map = {
 	["n|<leader>sr"] = map_cu("RestoreSession"):with_noremap():with_silent():with_desc("session: Restore"),
 	["n|<leader>sd"] = map_cu("DeleteSession"):with_noremap():with_silent():with_desc("session: Delete"),
 
-	-- Plugin: nvim-bufdel
-	["n|<A-q>"] = map_cr("BufDel"):with_noremap():with_silent():with_desc("buffer: Close current"),
 
 
 	-- Plugin: comment.nvim
@@ -40,14 +38,14 @@ local plug_map = {
 		:with_noremap()
 		:with_expr()
 		:with_desc("edit: Toggle comment for block"),
-	["n|gc"] = map_cmd("<Plug>(comment_toggle_linewise)")
-		:with_silent()
-		:with_noremap()
-		:with_desc("edit: Toggle comment for line with operator"),
-	["n|gb"] = map_cmd("<Plug>(comment_toggle_blockwise)")
-		:with_silent()
-		:with_noremap()
-		:with_desc("edit: Toggle comment for block with operator"),
+	-- ["n|gc"] = map_cmd("<Plug>(comment_toggle_linewise)")
+	-- 	:with_silent()
+	-- 	:with_noremap()
+	-- 	:with_desc("edit: Toggle comment for line with operator"),
+	-- ["n|gb"] = map_cmd("<Plug>(comment_toggle_blockwise)")
+	-- 	:with_silent()
+	-- 	:with_noremap()
+	-- 	:with_desc("edit: Toggle comment for block with operator"),
 	["x|gc"] = map_cmd("<Plug>(comment_toggle_linewise_visual)")
 		:with_silent()
 		:with_noremap()
@@ -73,15 +71,6 @@ local plug_map = {
 		:with_expr()
 		:with_desc("edit: Align with delimiter"),
 
-	-- Plugin: hop
-	["n|<leader>w"] = map_cu("HopWord"):with_noremap():with_desc("jump: Goto word"),
-	["n|<leader>j"] = map_cu("HopLine"):with_noremap():with_desc("jump: Goto line"),
-	["n|<leader>k"] = map_cu("HopLine"):with_noremap():with_desc("jump: Goto line"),
-	["n|<leader>c"] = map_cu("HopChar1"):with_noremap():with_desc("jump: Goto one char"),
-	["n|<leader>cc"] = map_cu("HopChar2"):with_noremap():with_desc("jump: Goto two chars"),
-
-	-- Plugin: treehopper
-	["o|m"] = map_cu("lua require('tsht').nodes()"):with_silent():with_desc("jump: Operate across syntax tree"),
 
 	-- Plugin: tabout
 	["i|<A-l>"] = map_cmd("<Plug>(TaboutMulti)"):with_silent():with_noremap():with_desc("edit: Goto end of pair"),
