@@ -60,12 +60,7 @@ tool["akinsho/toggleterm.nvim"] = {
 -- 	cmd = { "Trouble", "TroubleToggle", "TroubleRefresh" },
 -- 	config = require("tool.trouble"),
 -- }
-tool["gelguy/wilder.nvim"] = {
-	lazy = true,
-	event = "CmdlineEnter",
-	config = require("tool.wilder"),
-	dependencies = { "romgrk/fzy-lua-native" },
-}
+
 
 ----------------------------------------------------------------------
 --                        Telescope Plugins                         --
