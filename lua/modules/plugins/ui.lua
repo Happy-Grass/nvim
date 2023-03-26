@@ -7,7 +7,7 @@ ui["catppuccin/nvim"] = {
 }
 
 ui["sainnhe/edge"] = {
-	lazy = true,
+	lazy = false,
 	config = require("ui.edge"),
 }
 

@@ -65,7 +65,6 @@ settings["lsp_deps"] = {
 	"lua_ls",
 	"pyright",
 	"r_language_server",
-	-- "gopls",
 }
 
 -- Set the general-purpose servers that will be installed during bootstrap here

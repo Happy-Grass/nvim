@@ -8,7 +8,7 @@ return function()
 		formatting.yapf,
 		diagnostics.flake8,
 		formatting.stylua,
-		diagnostics.luacheck,
+		-- diagnostics.luacheck,
 		formatting.latexindent,
 		-- diagnostics.vale,
 		formatting.beautysh,

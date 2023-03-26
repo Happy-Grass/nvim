@@ -19,6 +19,8 @@ return vim.schedule_wrap(function()
 			"markdown_inline",
 			"python",
 			"yaml",
+			"vim",
+			"regex",
 		},
 		highlight = {
 			enable = true,
