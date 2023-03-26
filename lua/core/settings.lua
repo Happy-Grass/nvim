@@ -30,7 +30,7 @@ settings["palette_overwrite"] = {}
 -- Set the colorscheme to use here.
 -- Available values are: `catppuccin`, `catppuccin-latte`, `catppucin-mocha`, `catppuccin-frappe`, `catppuccin-macchiato`, `edge`, `nord`.
 ---@type string
-settings["colorscheme"] = "catppuccin"
+settings["colorscheme"] = "tokyonight"
 
 -- Set background color to use here.
 -- Useful if you would like to use a colorscheme that has a light and dark variant like `edge`.
@@ -82,8 +82,8 @@ settings["null_ls_deps"] = {
 	"stylua",
 	"luacheck",
 	"shellcheck",
-	"vale",
-	"beaufysh",
+	-- "vale",
+	"beautysh",
 	"yapf",
 	"latexindent",
 }
