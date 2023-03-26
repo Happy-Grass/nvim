@@ -13,6 +13,12 @@ tool["folke/which-key.nvim"] = {
 -- 	cond = vim.fn.executable("fcitx5-remote") == 1,
 -- 	config = require("tool.fcitx5"),
 -- }
+tool["chentoast/marks.nvim"] = {
+	lazy = true,
+	event = "BufReadPost",
+	config = require("tool.marks"),
+}
+
 tool["nvim-tree/nvim-tree.lua"] = {
 	lazy = true,
 	cmd = {
@@ -24,16 +30,13 @@ tool["nvim-tree/nvim-tree.lua"] = {
 	},
 	config = require("tool.nvim-tree"),
 }
--- tool["ibhagwan/smartyank.nvim"] = {
--- 	lazy = true,
--- 	event = "BufReadPost",
--- 	config = require("tool.smartyank"),
--- }
-tool["tversteeg/registers.nvim"] = {
-    lazy = true,
-    cmd = "Registers",
-    name = "registers",
-    config = require("tool.registers")
+tool["Shatur/neovim-session-manager"] = {
+	lazy = true,
+	cmd = { "SessionManager" },
+	config = require("tool.nvim-session-manager"),
+	dependencies = {
+		{ "nvim-telescope/telescope.nvim" },
+	},
 }
 tool["michaelb/sniprun"] = {
 	lazy = true,
@@ -43,6 +46,7 @@ tool["michaelb/sniprun"] = {
 	cmd = { "SnipRun" },
 	config = require("tool.sniprun"),
 }
+
 tool["akinsho/toggleterm.nvim"] = {
 	lazy = true,
 	cmd = {
@@ -55,12 +59,17 @@ tool["akinsho/toggleterm.nvim"] = {
 	},
 	config = require("tool.toggleterm"),
 }
--- tool["folke/trouble.nvim"] = {
--- 	lazy = true,
--- 	cmd = { "Trouble", "TroubleToggle", "TroubleRefresh" },
--- 	config = require("tool.trouble"),
--- }
 
+tool["folke/trouble.nvim"] = {
+	lazy = true,
+	cmd = { "Trouble", "TroubleToggle", "TroubleRefresh" },
+	config = require("tool.trouble"),
+}
+
+tool["sindrets/diffview.nvim"] = {
+	lazy = true,
+	cmd = { "DiffviewOpen", "DiffviewClose" },
+}
 
 ----------------------------------------------------------------------
 --                        Telescope Plugins                         --
@@ -70,21 +79,23 @@ tool["nvim-telescope/telescope.nvim"] = {
 	cmd = "Telescope",
 	config = require("tool.telescope"),
 	dependencies = {
+		{ "AckslD/nvim-neoclip.lua", config = require("tool.neoclip") },
 		{ "nvim-tree/nvim-web-devicons" },
 		{ "nvim-lua/plenary.nvim" },
-		-- { "nvim-lua/popup.nvim" },
-		-- { "debugloop/telescope-undo.nvim" },
+		{ "nvim-lua/popup.nvim" },
+		{ "debugloop/telescope-undo.nvim" },
 		-- {
 		-- 	"ahmedkhalf/project.nvim",
 		-- 	event = "BufReadPost",
 		-- 	config = require("tool.project"),
 		-- },
-		-- { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-		-- { "nvim-telescope/telescope-frecency.nvim", dependencies = {
-		-- 	{ "kkharji/sqlite.lua" },
-		-- } },
-		-- { "jvgrootveld/telescope-zoxide" },
-		-- { "nvim-telescope/telescope-live-grep-args.nvim" },
+		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+		{ "nvim-telescope/telescope-frecency.nvim", dependencies = {
+			{ "kkharji/sqlite.lua" },
+		} },
+		{ "jvgrootveld/telescope-zoxide" },
+		{ "nvim-telescope/telescope-live-grep-args.nvim" },
+		{ "nvim-telescope/telescope-ui-select.nvim" },
 	},
 }
 
