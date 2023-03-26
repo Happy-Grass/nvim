@@ -123,7 +123,7 @@ return function()
 				opts = {}, -- merged with defaults from documentation
 			},
 			signature = {
-				enabled = true,
+				enabled = false,
 				auto_open = {
 					enabled = true,
 					trigger = true, -- Automatically show signature help when typing a trigger character from the LSP
@@ -173,7 +173,7 @@ return function()
 		smart_move = {
 			-- noice tries to move out of the way of existing floating windows.
 			enabled = true, -- you can disable this behaviour here
-		-- Packer
+			-- Packer
 			-- add any filetypes here, that shouldn't trigger smart move.
 			excluded_filetypes = { "cmp_menu", "cmp_docs", "notify" },
 		},
