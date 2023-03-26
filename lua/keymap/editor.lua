@@ -14,13 +14,6 @@ local plug_map = {
 		return et("<Plug>(accelerated_jk_gk)")
 	end):with_expr(),
 
-	-- Plugin: auto_session
-	["n|<leader>ss"] = map_cu("SaveSession"):with_noremap():with_silent():with_desc("session: Save"),
-	["n|<leader>sr"] = map_cu("RestoreSession"):with_noremap():with_silent():with_desc("session: Restore"),
-	["n|<leader>sd"] = map_cu("DeleteSession"):with_noremap():with_silent():with_desc("session: Delete"),
-
-
-
 	-- Plugin: comment.nvim
 	["n|gcc"] = map_callback(function()
 			return vim.v.count == 0 and et("<Plug>(comment_toggle_linewise_current)")
@@ -38,14 +31,14 @@ local plug_map = {
 		:with_noremap()
 		:with_expr()
 		:with_desc("edit: Toggle comment for block"),
-	-- ["n|gc"] = map_cmd("<Plug>(comment_toggle_linewise)")
-	-- 	:with_silent()
-	-- 	:with_noremap()
-	-- 	:with_desc("edit: Toggle comment for line with operator"),
-	-- ["n|gb"] = map_cmd("<Plug>(comment_toggle_blockwise)")
-	-- 	:with_silent()
-	-- 	:with_noremap()
-	-- 	:with_desc("edit: Toggle comment for block with operator"),
+	["n|gc"] = map_cmd("<Plug>(comment_toggle_linewise)")
+		:with_silent()
+		:with_noremap()
+		:with_desc("edit: Toggle comment for line with operator"),
+	["n|gb"] = map_cmd("<Plug>(comment_toggle_blockwise)")
+		:with_silent()
+		:with_noremap()
+		:with_desc("edit: Toggle comment for block with operator"),
 	["x|gc"] = map_cmd("<Plug>(comment_toggle_linewise_visual)")
 		:with_silent()
 		:with_noremap()
@@ -58,19 +51,6 @@ local plug_map = {
 	-- Plugin: diffview
 	["n|<leader>D"] = map_cr("DiffviewOpen"):with_silent():with_noremap():with_desc("git: Show diff"),
 	["n|<leader><leader>D"] = map_cr("DiffviewClose"):with_silent():with_noremap():with_desc("git: Close diff"),
-
-	-- Plugin: vim-easy-align
-	["n|gea"] = map_callback(function()
-			return et("<Plug>(EasyAlign)")
-		end)
-		:with_expr()
-		:with_desc("edit: Align with delimiter"),
-	["x|gea"] = map_callback(function()
-			return et("<Plug>(EasyAlign)")
-		end)
-		:with_expr()
-		:with_desc("edit: Align with delimiter"),
-
 
 	-- Plugin: tabout
 	["i|<A-l>"] = map_cmd("<Plug>(TaboutMulti)"):with_silent():with_noremap():with_desc("edit: Goto end of pair"),
