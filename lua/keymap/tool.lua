@@ -7,22 +7,30 @@ require("keymap.helpers")
 
 local plug_map = {
 	-- Plugin: vim-fugitive
-	["n|gps"] = map_cr("G push"):with_noremap():with_silent():with_desc("git: Push"),
-	["n|gpl"] = map_cr("G pull"):with_noremap():with_silent():with_desc("git: Pull"),
-	["n|<leader>G"] = map_cu("Git"):with_noremap():with_silent():with_desc("git: Open git-fugitive"),
+	-- ["n|gps"] = map_cr("G push"):with_noremap():with_silent():with_desc("git: Push"),
+	-- ["n|gpl"] = map_cr("G pull"):with_noremap():with_silent():with_desc("git: Pull"),
+	-- ["n|<leader>G"] = map_cu("Git"):with_noremap():with_silent():with_desc("git: Open git-fugitive"),
+	--plugin neoclip
+	["n|<leader>cc"] = map_cr(":Telescope neoclip"):with_noremap():with_silent():with_desc("tool: Show clip history"),
 
+	--plugin neovim-sessionmanage
+	["n|<leader>ss"] = map_cr(":SessionManager save_current_session")
+		:with_silent()
+		:with_desc("session: Save the current session"),
+	["n|<leader>sl"] = map_cr(":SessionManager load_session"):with_silent():with_desc("session: Load session"),
+	["n|<leader>sd"] = map_cr(":SessionManager delete_session"):with_silent():with_desc("session: Delete session"),
 	-- Plugin: nvim-tree
-	["n|<C-m>"] = map_cr("NvimTreeToggle"):with_noremap():with_silent():with_desc("filetree: Toggle"),
-	["n|<leader>nf"] = map_cr("NvimTreeFindFile"):with_noremap():with_silent():with_desc("filetree: Find file"),
-	["n|<leader>nr"] = map_cr("NvimTreeRefresh"):with_noremap():with_silent():with_desc("filetree: Refresh"),
+	["n|<leader>mm"] = map_cr("NvimTreeToggle"):with_noremap():with_silent():with_desc("filetree: Toggle"),
+	["n|<leader>mf"] = map_cr("NvimTreeFindFile"):with_noremap():with_silent():with_desc("filetree: Find file"),
+	["n|<leader>mr"] = map_cr("NvimTreeRefresh"):with_noremap():with_silent():with_desc("filetree: Refresh"),
 
 	-- Plugin: sniprun
 	["v|<leader>r"] = map_cr("SnipRun"):with_noremap():with_silent():with_desc("tool: Run code by range"),
 	["n|<leader>r"] = map_cu([[%SnipRun]]):with_noremap():with_silent():with_desc("tool: Run code by file"),
 
 	-- Plugin: toggleterm
-	["t|<Esc><Esc>"] = map_cmd([[<C-\><C-n>]]):with_silent(), -- switch to normal mode in terminal.
-	["t|jk"] = map_cmd([[<C-\><C-n>]]):with_silent(), -- switch to normal mode in terminal.
+	-- ["t|<Esc><Esc>"] = map_cmd([[<C-\><C-n>]]):with_silent(), -- switch to normal mode in terminal.
+	-- ["t|jk"] = map_cmd([[<C-\><C-n>]]):with_silent(), -- switch to normal mode in terminal.
 	["n|<C-\\>"] = map_cr([[execute v:count . "ToggleTerm direction=horizontal"]])
 		:with_noremap()
 		:with_silent()
@@ -63,11 +71,11 @@ local plug_map = {
 		:with_noremap()
 		:with_silent()
 		:with_desc("terminal: Toggle float"),
-	["i|<A-d>"] = map_cmd("<Esc><Cmd>ToggleTerm direction=float<CR>")
+	["i|<A-t>"] = map_cmd("<Esc><Cmd>ToggleTerm direction=float<CR>")
 		:with_noremap()
 		:with_silent()
 		:with_desc("terminal: Toggle float"),
-	["t|<A-d>"] = map_cmd("<Esc><Cmd>ToggleTerm<CR>"):with_noremap():with_silent():with_desc("terminal: Toggle float"),
+	["t|<A-t>"] = map_cmd("<Esc><Cmd>ToggleTerm<CR>"):with_noremap():with_silent():with_desc("terminal: Toggle float"),
 	["n|<leader>g"] = map_callback(function()
 			_toggle_lazygit()
 		end)
@@ -114,12 +122,12 @@ local plug_map = {
 		:with_noremap()
 		:with_silent()
 		:with_desc("edit: Show undo history"),
-	["n|<leader>fp"] = map_callback(function()
-			require("telescope").extensions.projects.projects({})
-		end)
-		:with_noremap()
-		:with_silent()
-		:with_desc("find: Project"),
+	-- ["n|<leader>fp"] = map_callback(function()
+	-- 		require("telescope").extensions.projects.projects({})
+	-- 	end)
+	-- 	:with_noremap()
+	-- 	:with_silent()
+	-- 	:with_desc("find: Project"),
 	["n|<leader>fr"] = map_callback(function()
 			require("telescope").extensions.frecency.frecency()
 		end)
