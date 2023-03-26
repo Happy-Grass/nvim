@@ -6,6 +6,11 @@ ui["catppuccin/nvim"] = {
 	config = require("ui.themes.catppuccin"),
 }
 
+ui["sainnhe/edge"] = {
+	lazy = true,
+	config = require("ui.edge"),
+}
+
 ui["shaunsingh/nord.nvim"] = {
 	lazy = false,
 	config = require("ui.themes.nord"),
@@ -47,12 +52,12 @@ ui["lukas-reineke/indent-blankline.nvim"] = {
 
 ui["folke/noice.nvim"] = {
 	lazy = true,
-    event = "VeryLazy",
+	event = "VeryLazy",
 	dependencies = {
 		{ "MunifTanjim/nui.nvim" },
 		{ "rcarriga/nvim-notify", config = require("ui.notify") },
 	},
-    config = require("ui.noice")
+	config = require("ui.noice"),
 }
 
 return ui
