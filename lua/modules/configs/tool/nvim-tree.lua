@@ -29,7 +29,7 @@ return function()
 			number = false,
 			relativenumber = false,
 			signcolumn = "yes",
-			hide_root_folder = false,
+			hide_root_folder = true,
 			float = {
 				enable = false,
 				open_win_config = {
@@ -152,7 +152,7 @@ return function()
 			debounce_delay = 50,
 		},
 		git = {
-			enable = true,
+			enable = false,
 			ignore = true,
 			show_on_dirs = true,
 			timeout = 400,
