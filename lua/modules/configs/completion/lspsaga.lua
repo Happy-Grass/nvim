@@ -23,11 +23,11 @@ return function()
 		end
 	end
 
-    vim.diagnostic.config({
-        virtual_text = false,
-        signs = true,
-        update_in_insert = false,
-    })
+	vim.diagnostic.config({
+		virtual_text = false,
+		signs = true,
+		update_in_insert = false,
+	})
 
 	set_sidebar_icons()
 
@@ -42,7 +42,7 @@ return function()
 		},
 		request_timeout = 3000,
 		finder = {
-            max_height = 0.5,
+			max_height = 0.5,
 			keys = {
 				jump_to = "p",
 				edit = { "o", "<CR>" },
@@ -62,10 +62,10 @@ return function()
 		},
 		code_action = {
 			num_shortcut = true,
-            show_server_name = false,
-            extend_gitsigns = true,
+			show_server_name = false,
+			extend_gitsigns = true,
 			keys = {
-				quit = {"q", "<esc>"},
+				quit = { "q", "<esc>" },
 				exec = "<CR>",
 			},
 		},
@@ -84,10 +84,12 @@ return function()
 			show_virt_line = true,
 			border_follow = true,
 			jump_num_shortcut = true,
-            max_width = 0.7,
+			max_width = 0.7,
 			keys = {
 				exec_action = "<CR>",
-				quit = {"q", "<esc>"},
+				quit = "q",
+				expand_or_jump = "<CR>",
+				quit_in_show = { "q", "<ESC>" },
 				go_action = "g",
 			},
 		},
@@ -102,23 +104,23 @@ return function()
 			win_position = "right",
 			win_with = "_sagaoutline",
 			win_width = 30,
-            show_detail = true,
+			show_detail = true,
 			auto_preview = false,
 			auto_refresh = true,
 			auto_close = true,
 			keys = {
 				jump = "<CR>",
 				expand_collapse = "u",
-				quit = {"q", "<esc>"},
+				quit = "q",
 			},
 		},
 		symbol_in_winbar = {
-			enable = false,
+			enable = true,
 			separator = " " .. icons.ui.Separator,
 			hide_keyword = true,
 			show_file = false,
-            folder_level = 2,
-            respect_root = false,
+			folder_level = 2,
+			respect_root = false,
 			color_mode = true,
 		},
 		beacon = {
