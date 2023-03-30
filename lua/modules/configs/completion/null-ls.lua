@@ -13,7 +13,10 @@ return function()
 		-- diagnostics.vale,
 		formatting.beautysh,
 		diagnostics.shellcheck,
-		formatting.clang_format,
+		formatting.clang_format.with({
+			filetypes = { "c", "cpp" },
+			extra_args = require("completion.formatters.clang_format"),
+		}),
 		diagnostics.cpplint,
 	}
 	null_ls.setup({
