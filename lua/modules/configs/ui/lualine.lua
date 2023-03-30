@@ -101,24 +101,28 @@ return function()
 			icons_enabled = true,
 			theme = "auto",
 			globalstatus = true,
-			disabled_filetypes = {},
-			component_separators = "|",
+			disabled_filetypes = {
+				statusline = {},
+				winbar = {},
+			},
+			component_separators = icons.misc.Vbar,
 			section_separators = { left = "", right = "" },
 		},
 		sections = {
 			lualine_a = { { "mode" } },
 			lualine_b = { { "branch" }, { "diff", source = diff_source } },
-			lualine_c = { lspsaga_symbols },
+			-- lualine_c = { lspsaga_symbols },
+			lualine_c = {},
 			lualine_x = {
 				{
 					"diagnostics",
 					sources = { "nvim_diagnostic" },
-					symbols = { error = " ", warn = " ", info = " ", hint = "󰌵 " },
-					-- symbols = {
-					-- 	error = icons.diagnostics.Error,
-					-- 	warn = icons.diagnostics.Warning,
-					-- 	info = icons.diagnostics.Information,
-					-- },
+					symbols = {
+						error = icons.diagnostics.Error,
+						warn = icons.diagnostics.Warning,
+						info = icons.diagnostics.Information,
+						hint = icons.diagnostics.Hint,
+					},
 				},
 				{ get_cwd },
 			},
@@ -152,7 +156,7 @@ return function()
 			-- "nvim-tree",
 			-- "nvim-dap-ui",
 			-- "toggleterm",
-			-- "outline",
+			outline,
 			-- "diffview",
 		},
 	})

@@ -71,6 +71,12 @@ tool["sindrets/diffview.nvim"] = {
 	cmd = { "DiffviewOpen", "DiffviewClose" },
 }
 
+tool["Pocco81/true-zen.nvim"] = {
+	lazy = true,
+	cmd = { "TZFocus", "TZMinimalist" },
+	config = require("tool.zenmode"),
+}
+
 ----------------------------------------------------------------------
 --                        Telescope Plugins                         --
 ----------------------------------------------------------------------

@@ -30,7 +30,7 @@ completion["hrsh7th/nvim-cmp"] = {
 	dependencies = {
 		{
 			"L3MON4D3/LuaSnip",
-			-- dependencies = { "rafamadriz/friendly-snippets" },
+			dependencies = { "rafamadriz/friendly-snippets" },
 			config = require("completion.luasnip"),
 		},
 		{ "onsails/lspkind.nvim" },

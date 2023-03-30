@@ -1,1 +1,1 @@
-# Re-architecture config for neovim
+# This is a new config for neovim

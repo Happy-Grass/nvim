@@ -4,6 +4,7 @@ return function()
 	local map = vim.keymap.set
 
 	require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets/" })
+	require("luasnip.loaders.from_vscode").lazy_load()
 	ls.config.set_config({
 		history = true,
 		updateevents = "TextChanged, TextChangedI",

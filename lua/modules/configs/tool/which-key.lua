@@ -6,12 +6,18 @@ return function()
 
 	require("which-key").setup({
 		plugins = {
+			marks = true,
+			registers = true,
+			spelling = {
+				enabled = true, -- enabling this will show WhichKey when pressing z= to select spelling suggestions
+				suggestions = 20, -- how many suggestions should be shown in the list?
+			},
 			presets = {
 				operators = false,
 				motions = false,
 				text_objects = false,
 				windows = false,
-				nav = false,
+				nav = true,
 				z = true,
 				g = true,
 			},
@@ -29,6 +35,12 @@ return function()
 			margin = { 1, 0, 1, 0 },
 			padding = { 1, 1, 1, 1 },
 			winblend = 0,
+		},
+		layout = {
+			height = { min = 4, max = 25 }, -- min and max height of the columns
+			width = { min = 20, max = 50 }, -- min and max width of the columns
+			spacing = 3, -- spacing between columns
+			align = "left", -- align columns left, center or right
 		},
 	})
 end

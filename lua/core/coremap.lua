@@ -22,6 +22,11 @@ local core_map = {
 	["n|J"] = map_cmd("mzJ`z"):with_noremap():with_desc("editn: Join next line"),
 	["n|<leader>sh"] = map_cmd("<C-w>s"):with_noremap():with_silent():with_desc("window: Split horizontal"),
 	["n|<leader>sv"] = map_cmd("<C-w>v"):with_noremap():with_silent():with_desc("window: Split vertical"),
+	["n|<leader>hn"] = map_cr("set nohlsearch")
+		:with_noremap()
+		:with_silent()
+		:with_desc("search: Set nohighlight in search"),
+	["n|<leader>hy"] = map_cr("set hlsearch"):with_noremap():with_silent():with_desc("search: Set highlight in search"),
 	["n|<C-h>"] = map_cmd("<C-w>h"):with_noremap():with_desc("window: Focus left"),
 	["n|<C-l>"] = map_cmd("<C-w>l"):with_noremap():with_desc("window: Focus right"),
 	["n|<C-j>"] = map_cmd("<C-w>j"):with_noremap():with_desc("window: Focus down"),

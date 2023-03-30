@@ -12,6 +12,10 @@ local plug_map = {
 	-- ["n|<leader>G"] = map_cu("Git"):with_noremap():with_silent():with_desc("git: Open git-fugitive"),
 	--plugin neoclip
 	["n|<leader>cc"] = map_cr(":Telescope neoclip"):with_noremap():with_silent():with_desc("tool: Show clip history"),
+	["n|<leader>q"] = map_cr(":Telescope macroscope")
+		:with_noremap()
+		:with_silent()
+		:with_desc("tool: Show macro history"),
 
 	--plugin neovim-sessionmanage
 	["n|<leader>ss"] = map_cr(":SessionManager save_current_session")
@@ -19,6 +23,13 @@ local plug_map = {
 		:with_desc("session: Save the current session"),
 	["n|<leader>sl"] = map_cr(":SessionManager load_session"):with_silent():with_desc("session: Load session"),
 	["n|<leader>sd"] = map_cr(":SessionManager delete_session"):with_silent():with_desc("session: Delete session"),
+
+	--plugin true-zen
+	-- ["n|<leader>zn"] = map_cr(":TZNarrow"):with_silent():with_desc("Zen: TZNarrow"),
+	-- ["v|<leader>zn"] = map_cr(":TZNarrow"):with_silent():with_desc("Zen: TZNarrow"),
+	["n|<leader>zf"] = map_cr(":TZFocus"):with_silent():with_desc("Zen: TZFocus"),
+	["n|<leader>zm"] = map_cr(":TZMinimalist"):with_silent():with_desc("Zen: TZMinimalist"),
+	-- ["n|<leader>za"] = map_cr(":TZAtaraxis"):with_silent():with_desc("Zen: TZAtaraxis"),
 	-- Plugin: nvim-tree
 	["n|<leader>mm"] = map_cr("NvimTreeToggle"):with_noremap():with_silent():with_desc("filetree: Toggle"),
 	["n|<leader>mf"] = map_cr("NvimTreeFindFile"):with_noremap():with_silent():with_desc("filetree: Find file"),

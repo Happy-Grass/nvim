@@ -22,24 +22,23 @@ return function()
 		bold = true,
 		nocombine = true,
 	})
-	-- vim.api.nvim_create_autocmd("ColorScheme", {
-	--     callback = function()
-	--         vim.api.nvim_set_hl(0, "LeapMatch", {
-	--             fg = "#7aa2f7",
-	--             bold = true,
-	--             nocombine = true,
-	--         })
-	--         vim.api.nvim_set_hl(0, "LeapLabelPrimary", {
-	--             fg = "#4fd6be",
-	--             bold = true,
-	--             nocombine = true,
-	--         })
-	--         vim.api.nvim_set_hl(0, "LeapLabelSecondary", {
-	--             fg = "#c3e88d",
-	--             bold = true,
-	--             nocombine = true,
-	--         })
-
-	--     end,
-	-- })
+	vim.api.nvim_create_autocmd("ColorScheme", {
+		callback = function()
+			vim.api.nvim_set_hl(0, "LeapMatch", {
+				fg = "#7aa2f7",
+				bold = true,
+				nocombine = true,
+			})
+			vim.api.nvim_set_hl(0, "LeapLabelPrimary", {
+				fg = "#4fd6be",
+				bold = true,
+				nocombine = true,
+			})
+			vim.api.nvim_set_hl(0, "LeapLabelSecondary", {
+				fg = "#c3e88d",
+				bold = true,
+				nocombine = true,
+			})
+		end,
+	})
 end
