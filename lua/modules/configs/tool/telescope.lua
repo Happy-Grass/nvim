@@ -80,4 +80,5 @@ return function()
 	require("telescope").load_extension("neoclip")
 	require("telescope").load_extension("macroscope")
 	require("telescope").load_extension("ui-select")
+	require("telescope").load_extension("noice")
 end

@@ -5,6 +5,7 @@ return function()
 	local diagnostics = null_ls.builtins.diagnostics
 
 	local sources = {
+		formatting.prettier,
 		formatting.yapf,
 		diagnostics.flake8,
 		formatting.stylua,
@@ -32,7 +33,7 @@ return function()
 		automatic_installation = false,
 		automatic_setup = true,
 	})
-	mason_null_ls.setup_handlers()
+	-- mason_null_ls.setup_handlers()
 
 	require("completion.formatting").configure_format_on_save()
 end

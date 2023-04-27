@@ -6,6 +6,10 @@ local map_callback = bind.map_callback
 require("keymap.helpers")
 
 local plug_map = {
+	["n|<leader>jrl"] = map_cr(":MagmaEvaluateLine<CR>"):with_noremap():with_silent():with_desc("tool: Run Line"),
+	["n|<leader>jso"] = map_cr(":MagmaShowOutput<CR>"):with_noremap():with_silent():with_desc("tool: Run Line"),
+	["n|<leader>jrc"] = map_cr(":MagmaReevaluateCell<CR>"):with_noremap():with_silent():with_desc("tool: Run Line"),
+	["x|<leader>jr"] = map_cr(":<C-u>MagmaEvaluateVisual<CR>"):with_noremap():with_silent():with_desc("tool: Run Line"),
 	-- Plugin: vim-fugitive
 	-- ["n|gps"] = map_cr("G push"):with_noremap():with_silent():with_desc("git: Push"),
 	-- ["n|gpl"] = map_cr("G pull"):with_noremap():with_silent():with_desc("git: Pull"),

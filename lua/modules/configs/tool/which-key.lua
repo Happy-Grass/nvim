@@ -6,8 +6,8 @@ return function()
 
 	require("which-key").setup({
 		plugins = {
-			marks = true,
-			registers = true,
+			marks = false,
+			registers = false,
 			spelling = {
 				enabled = true, -- enabling this will show WhichKey when pressing z= to select spelling suggestions
 				suggestions = 20, -- how many suggestions should be shown in the list?
@@ -16,13 +16,12 @@ return function()
 				operators = false,
 				motions = false,
 				text_objects = false,
-				windows = false,
+				windows = true,
 				nav = true,
 				z = true,
 				g = true,
 			},
 		},
-
 		icons = {
 			breadcrumb = icons.ui.Separator,
 			separator = icons.misc.Vbar,
@@ -34,7 +33,7 @@ return function()
 			position = "bottom",
 			margin = { 1, 0, 1, 0 },
 			padding = { 1, 1, 1, 1 },
-			winblend = 0,
+			winblend = 20,
 		},
 		layout = {
 			height = { min = 4, max = 25 }, -- min and max height of the columns

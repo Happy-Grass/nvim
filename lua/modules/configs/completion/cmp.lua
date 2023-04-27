@@ -20,7 +20,6 @@ return function()
 			{ "│", hl },
 		}
 	end
-
 	local cmp_window = require("cmp.utils.window")
 
 	cmp_window.info_ = cmp_window.info
@@ -71,18 +70,20 @@ return function()
 				compare.order,
 			},
 		},
+
 		formatting = {
 			format = lspkind.cmp_format({
 				mode = "symbol_text",
 				maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
 				maxheight = 20,
+				symbol_map = vim.tbl_deep_extend("force", icons.kind, icons.type, icons.cmp),
 				before = function(entry, vim_item)
 					vim_item.menu = "[" .. string.upper(entry.source.name) .. "]"
 					return vim_item
 				end,
 			}),
 		},
-		-- You can set mappings if you want
+		-- you can set mappings if you want
 		mapping = cmp.mapping.preset.insert({
 			["<CR>"] = cmp.mapping.confirm({ select = true }),
 			["<C-y>"] = cmp.mapping.confirm({ select = true }),
@@ -125,26 +126,23 @@ return function()
 			{ name = "treesitter", max_item_count = 5 },
 			-- { name = "spell" },
 			-- { name = "tmux" },
-			-- { name = "orgmode" },
 			{ name = "buffer", max_item_count = 5 },
 			{ name = "latex_symbols", max_item_count = 5 },
-			-- { name = "copilot" },
-			-- { name = "codeium" },
-			-- { name = "cmp_tabnine" },
+			{ name = "cmp_tabnine" },
 		},
 	})
 	cmp.setup.cmdline("/", {
 		sources = {
 			{ name = "buffer", max_item_count = 5 },
 		},
+		mapping = cmp.mapping.preset.cmdline(),
 	})
 
-	-- Use cmdline & path source for ':'.
 	cmp.setup.cmdline(":", {
-		sources = cmp.config.sources({
+		sources = {
 			{ name = "path", max_item_count = 5 },
-		}, {
 			{ name = "cmdline", max_item_count = 5 },
-		}),
+		},
+		mapping = cmp.mapping.preset.cmdline(),
 	})
 end

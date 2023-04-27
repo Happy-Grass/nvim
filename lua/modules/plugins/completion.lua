@@ -3,10 +3,10 @@ local completion = {}
 completion["neovim/nvim-lspconfig"] = {
 	lazy = true,
 	event = { "BufReadPost", "BufAdd", "BufNewFile" },
-	config = require("completion.lsp"),
+	config = require("completion.setup.lspconfig"),
 	dependencies = {
 		{ "ray-x/lsp_signature.nvim" },
-		{ "williamboman/mason.nvim" },
+		{ "williamboman/mason.nvim", config = require("completion.setup.installer") },
 		{ "williamboman/mason-lspconfig.nvim" },
 		{
 			"glepnir/lspsaga.nvim",
@@ -16,7 +16,7 @@ completion["neovim/nvim-lspconfig"] = {
 }
 completion["jose-elias-alvarez/null-ls.nvim"] = {
 	lazy = true,
-	event = { "CursorHold", "CursorHoldI" },
+	event = { "BufReadPost", "BufAdd", "BufNewFile" },
 	config = require("completion.null-ls"),
 	dependencies = {
 		"nvim-lua/plenary.nvim",
@@ -25,7 +25,7 @@ completion["jose-elias-alvarez/null-ls.nvim"] = {
 }
 completion["hrsh7th/nvim-cmp"] = {
 	lazy = true,
-	event = "InsertEnter",
+	event = { "InsertEnter", "CmdlineEnter" },
 	config = require("completion.cmp"),
 	dependencies = {
 		{
@@ -37,7 +37,6 @@ completion["hrsh7th/nvim-cmp"] = {
 		-- { "lukas-reineke/cmp-under-comparator" },
 		{ "saadparwaiz1/cmp_luasnip" },
 		{ "hrsh7th/cmp-nvim-lsp" },
-		-- {"hrsh7th/cmp-nvim-lsp-signature-help"},
 		-- { "hrsh7th/cmp-nvim-lua" },
 		-- { "andersevenrud/cmp-tmux" },
 		{ "hrsh7th/cmp-path" },
@@ -47,28 +46,8 @@ completion["hrsh7th/nvim-cmp"] = {
 		{ "kdheepak/cmp-latex-symbols" },
 		{ "nvim-telescope/telescope.nvim" }, -- ui for luasnip select
 		-- { "ray-x/cmp-treesitter" },
-		-- { "tzachar/cmp-tabnine", build = "./install.sh", config = require("completion.tabnine") },
-		-- {
-		-- 	"jcdickinson/codeium.nvim",
-		-- 	dependencies = {
-		-- 		"nvim-lua/plenary.nvim",
-		-- 		"MunifTanjim/nui.nvim",
-		-- 	},
-		-- 	config = require("completion.codeium"),
-		-- },
+		{ "tzachar/cmp-tabnine", build = "./install.sh", config = require("completion.tabnine") },
 	},
 }
--- completion["zbirenbaum/copilot.lua"] = {
--- 	lazy = true,
--- 	cmd = "Copilot",
--- 	event = "InsertEnter",
--- 	config = require("completion.copilot"),
--- 	dependencies = {
--- 		{
--- 			"zbirenbaum/copilot-cmp",
--- 			config = require("completion.copilot-cmp"),
--- 		},
--- 	},
--- }
 
 return completion

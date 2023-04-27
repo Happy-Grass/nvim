@@ -1,28 +1,33 @@
 local ui = {}
 
 ui["catppuccin/nvim"] = {
-	lazy = false,
+	lazy = true,
+	event = { "ColorScheme" },
 	name = "catppuccin",
 	config = require("ui.themes.catppuccin"),
 }
 
 ui["sainnhe/edge"] = {
-	lazy = false,
-	config = require("ui.edge"),
+	lazy = true,
+	event = { "ColorScheme" },
+	config = require("ui.themes.edge"),
 }
 
 ui["shaunsingh/nord.nvim"] = {
-	lazy = false,
+	lazy = true,
+	event = { "ColorScheme" },
 	config = require("ui.themes.nord"),
 }
 
 ui["folke/tokyonight.nvim"] = {
-	lazy = false,
+	lazy = true,
+	event = { "ColorScheme" },
 	config = require("ui.themes.tokyonight"),
 }
 
 ui["olimorris/onedarkpro.nvim"] = {
-	lazy = false,
+	lazy = true,
+	event = { "ColorScheme" },
 	config = require("ui.themes.onedarkpro"),
 }
 
@@ -55,7 +60,10 @@ ui["folke/noice.nvim"] = {
 	event = "VeryLazy",
 	dependencies = {
 		{ "MunifTanjim/nui.nvim" },
-		{ "rcarriga/nvim-notify", config = require("ui.notify") },
+		{
+			"rcarriga/nvim-notify",
+			-- config = require("ui.notify")
+		},
 	},
 	config = require("ui.noice"),
 }

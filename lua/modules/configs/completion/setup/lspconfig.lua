@@ -1,38 +1,9 @@
 return function()
 	local nvim_lsp = require("lspconfig")
-	local mason = require("mason")
 	local mason_lspconfig = require("mason-lspconfig")
 
+	-- border for lsp info
 	require("lspconfig.ui.windows").default_options.border = "single"
-
-	local icons = {
-		ui = require("modules.utils.icons").get("ui", true),
-		misc = require("modules.utils.icons").get("misc", true),
-	}
-
-	mason.setup({
-		ui = {
-			border = "rounded",
-			icons = {
-				package_pending = icons.ui.Modified_alt,
-				package_installed = icons.ui.Check,
-				package_uninstalled = icons.misc.Ghost,
-			},
-			keymaps = {
-				toggle_server_expand = "<CR>",
-				install_server = "i",
-				update_server = "u",
-				check_server_version = "c",
-				update_all_servers = "U",
-				check_outdated_servers = "C",
-				uninstall_server = "X",
-				cancel_installation = "<C-c>",
-			},
-		},
-	})
-	mason_lspconfig.setup({
-		ensure_installed = require("core.settings").lsp_deps,
-	})
 
 	local capabilities = vim.lsp.protocol.make_client_capabilities()
 	capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
@@ -40,12 +11,19 @@ return function()
 	local opts = {
 		on_attach = function()
 			require("lsp_signature").on_attach({
+				noice = true,
 				bind = true,
+				doc_lines = 5,
+				max_height = 5,
+				max_width = 80,
+				wrap = false,
 				use_lspsaga = false,
 				floating_window = true,
-				fix_pos = true,
+				floating_window_above_cur_line = true,
+				fix_pos = false,
 				hint_enable = true,
-				hi_parameter = "Search",
+				hint_scheme = "String",
+				hi_parameter = "LspSignatureActiveParameter",
 				handler_opts = {
 					border = "rounded",
 				},
@@ -83,5 +61,4 @@ return function()
 	end
 
 	mason_lspconfig.setup_handlers({ mason_handler })
-
 end

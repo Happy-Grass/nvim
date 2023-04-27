@@ -18,10 +18,10 @@ editor["numToStr/Comment.nvim"] = {
 	config = require("editor.comment"),
 }
 
-editor["m4xshen/autoclose.nvim"] = {
+editor["windwp/nvim-autopairs"] = {
 	lazy = true,
 	event = "InsertEnter",
-	config = require("editor.autoclose"),
+	config = require("editor.autopairs"),
 }
 ----------------------------------------------------------------------
 --                  :treesitter related plugins                    --
@@ -33,7 +33,7 @@ editor["nvim-treesitter/nvim-treesitter"] = {
 			vim.api.nvim_command("TSUpdate")
 		end
 	end,
-	event = { "CursorHold", "CursorHoldI" },
+	event = { "BufReadPost", "BufAdd", "BufNewFile" },
 	config = require("editor.treesitter"),
 	dependencies = {
 		{ "nvim-treesitter/nvim-treesitter-textobjects" },
@@ -44,10 +44,6 @@ editor["nvim-treesitter/nvim-treesitter"] = {
 		{
 			"NvChad/nvim-colorizer.lua",
 			config = require("editor.colorizer"),
-		},
-		{
-			"abecodes/tabout.nvim",
-			config = require("editor.tabout"),
 		},
 	},
 }

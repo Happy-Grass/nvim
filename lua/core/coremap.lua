@@ -44,13 +44,16 @@ local core_map = {
 	["n|<leader>o"] = map_cr("setlocal spell! spelllang=en_us"):with_desc("editn: Toggle spell check"),
 	-- Insert mode
 	["i|<C-u>"] = map_cmd("<C-G>u<C-U>"):with_noremap():with_desc("editi: Delete previous block"),
-	["i|<C-b>"] = map_cmd("<Left>"):with_noremap():with_desc("editi: Move cursor to left"),
+	["i|<A-h>"] = map_cmd("<Left>"):with_noremap():with_desc("editi: Move cursor to left"),
+	["i|<A-l>"] = map_cmd("<Right>"):with_noremap():with_desc("editi: Move cursor to right"),
 	["i|<C-a>"] = map_cmd("<ESC>^i"):with_noremap():with_desc("editi: Move cursor to line start"),
 	["i|<C-s>"] = map_cmd("<Esc>:w<CR>"):with_desc("editi: Save file"),
 	-- ["i|<C-q>"] = map_cmd("<Esc>:wq<CR>"):with_desc("editi: Save file and quit"),
 	-- Command mode
 	["c|<C-b>"] = map_cmd("<Left>"):with_noremap():with_desc("editc: Left"),
 	["c|<C-f>"] = map_cmd("<Right>"):with_noremap():with_desc("editc: Right"),
+	["c|<C-j>"] = map_cmd("<Up>"):with_noremap():with_desc("editc: Last command"),
+	["c|<C-k>"] = map_cmd("<Down>"):with_noremap():with_desc("editc: Next command"),
 	["c|<C-a>"] = map_cmd("<Home>"):with_noremap():with_desc("editc: Home"),
 	["c|<C-e>"] = map_cmd("<End>"):with_noremap():with_desc("editc: End"),
 	["c|<C-d>"] = map_cmd("<Del>"):with_noremap():with_desc("editc: Delete"),
@@ -63,6 +66,19 @@ local core_map = {
 	["v|K"] = map_cmd(":m '<-2<CR>gv=gv"):with_desc("editv: Move this line up"),
 	["v|<"] = map_cmd("<gv"):with_desc("editv: Decrease indent"),
 	["v|>"] = map_cmd(">gv"):with_desc("editv: Increase indent"),
+	--enhanced edit
+	['n|<leader>"'] = map_cmd('viw<esc>a"<esc>bi"<esc>lel'):with_noremap():with_desc('Add " for word'),
+	["n|<leader>("] = map_cmd("viw<esc>a)<esc>bi(<esc>lel"):with_noremap():with_desc("Add ( for word"),
+	["n|<leader>["] = map_cmd("viw<esc>a]<esc>bi[<esc>lel"):with_noremap():with_desc("Add [ for word"),
+	["n|<leader><"] = map_cmd("viw<esc>a><esc>bi<<esc>lel"):with_noremap():with_desc("Add < for word"),
+	["n|<leader>{"] = map_cmd("viw<esc>a}<esc>bi{<esc>lel"):with_noremap():with_desc("Add { for word"),
+	["n|<leader>'"] = map_cmd("viw<esc>a'<esc>bi'<esc>lel"):with_noremap():with_desc("Add ' for word"),
+	["v|<leader>'"] = map_cmd("<esc>`<i'<esc>`>a'<esc>"):with_noremap():with_desc("Add ' for block"),
+	['v|<leader>"'] = map_cmd('<esc>`<i"<esc>`>a"<esc>'):with_noremap():with_desc('Add " for word'),
+	["v|<leader>{"] = map_cmd("<esc>`<i{<esc>`>a}<esc>"):with_noremap():with_desc("Add { for block"),
+	["v|<leader>("] = map_cmd("<esc>`<i(<esc>`>a)<esc>"):with_noremap():with_desc("Add ( for block"),
+	["v|<leader>["] = map_cmd("<esc>`<i[<esc>`>a]<esc>"):with_noremap():with_desc("Add [ for block"),
+	["v|<leader><"] = map_cmd("<esc>`<i<<esc>`>a><esc>"):with_noremap():with_desc("Add < for block"),
 }
 
 bind.nvim_load_mapping(core_map)

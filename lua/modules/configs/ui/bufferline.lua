@@ -3,8 +3,6 @@ return function()
 	require("bufferline").setup({
 		options = {
 			number = nil,
-			-- close_command = "Bdelete! %d",
-			-- right_mouse_command = "Bdelete! %d",
 			indicator = {
 				icon = "▎", -- this should be omitted if indicator style is not 'icon'
 				style = "icon", --| 'underline' | 'none',
