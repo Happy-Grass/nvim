@@ -55,17 +55,17 @@ ui["lukas-reineke/indent-blankline.nvim"] = {
 	config = require("ui.indent-blankline"),
 }
 
-ui["folke/noice.nvim"] = {
-	lazy = true,
-	event = "VeryLazy",
-	dependencies = {
-		{ "MunifTanjim/nui.nvim" },
-		{
-			"rcarriga/nvim-notify",
-			-- config = require("ui.notify")
-		},
-	},
-	config = require("ui.noice"),
-}
+-- ui["folke/noice.nvim"] = {
+-- 	lazy = true,
+-- 	event = "VeryLazy",
+-- 	dependencies = {
+-- 		{ "MunifTanjim/nui.nvim" },
+-- 		{
+-- 			"rcarriga/nvim-notify",
+-- 			-- config = require("ui.notify")
+-- 		},
+-- 	},
+-- 	config = require("ui.noice"),
+-- }
 
 return ui

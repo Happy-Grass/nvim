@@ -1,7 +1,7 @@
 return function()
-	require("cmp_tabnine.config").setup({
+	require("cmp_tabnine.config"):setup({
 		max_line = 1000,
-		max_num_results = 20,
+		max_num_results = 5,
 		sort = true,
 	})
 	local prefetch = vim.api.nvim_create_augroup("prefetch", { clear = true })

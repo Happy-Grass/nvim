@@ -1,14 +1,22 @@
 local tool = {}
-tool["edluffy/hologram.nvim"] = {
-	lazy = false,
-	config = require("tool.hologram"),
-}
+-- tool["edluffy/hologram.nvim"] = {
+-- 	lazy = false,
+-- 	config = require("tool.hologram"),
+-- }
 
 -- Please don't remove which-key.nvim otherwise you need to set timeoutlen=300 at `lua/core/options.lua`
 tool["folke/which-key.nvim"] = {
 	lazy = true,
 	event = "VeryLazy",
 	config = require("tool.which-key"),
+}
+tool["nvim-neorg/neorg"] = {
+	lazy = false,
+	tag = "v4.0.1",
+	-- event = "VeryLazy",
+	build = ":Neorg sync-parsers",
+	config = require("tool.neorg"),
+	dependencies = { { "nvim-lua/plenary.nvim" } },
 }
 -- jupyter-nvim
 tool["dccsillag/magma-nvim"] = {
@@ -17,13 +25,6 @@ tool["dccsillag/magma-nvim"] = {
 	event = "VeryLazy",
 	config = require("tool.magma"),
 }
--- only for fcitx5 user who uses non-English language during coding
--- tool["pysan3/fcitx5.nvim"] = {
--- 	lazy = true,
--- 	event = "BufReadPost",
--- 	cond = vim.fn.executable("fcitx5-remote") == 1,
--- 	config = require("tool.fcitx5"),
--- }
 tool["chentoast/marks.nvim"] = {
 	lazy = true,
 	event = "BufReadPost",

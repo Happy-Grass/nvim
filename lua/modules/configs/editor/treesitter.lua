@@ -10,7 +10,7 @@ return vim.schedule_wrap(function()
 			"c",
 			"cpp",
 			"css",
-			"help",
+			"vimdoc",
 			"json",
 			"latex",
 			"lua",
